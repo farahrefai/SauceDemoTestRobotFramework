@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.11.5 on win32)" generated="2025-02-28T23:49:23.253095" rpa="false" schemaversion="5">
+<suite id="s1" name="ShoppingTest" source="C:\Users\user\PycharmProjects\SauceDemoRobotFramework\tests\ShoppingTest.robot">
+<test id="s1-t1" name="Validate Cards display in the Shopping Page" line="13">
+<kw name="Open the page of Sauce demo" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-02-28T23:49:23.621093" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${browser_name}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-02-28T23:49:23.621093" elapsed="2.482869"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-02-28T23:49:26.113947" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-02-28T23:49:26.113130" elapsed="1.027266"/>
+</kw>
+<status status="PASS" start="2025-02-28T23:49:23.621093" elapsed="3.519303"/>
+</kw>
+<kw name="Fill The Login Form">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-28T23:49:27.145808" level="INFO">Typing text 'standard_user' into text field 'user-name'.</msg>
+<arg>user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.145808" elapsed="0.207719"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-02-28T23:49:27.355543" level="INFO">Typing password into text field 'password'.</msg>
+<msg time="2025-02-28T23:49:27.401962" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.353527" elapsed="0.104076"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-02-28T23:49:27.145140" elapsed="0.312463"/>
+</kw>
+<kw name="Click Login Button">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-28T23:49:27.457603" level="INFO">Clicking button 'login-button'.</msg>
+<arg>login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.457603" elapsed="0.136168"/>
+</kw>
+<status status="PASS" start="2025-02-28T23:49:27.457603" elapsed="0.136168"/>
+</kw>
+<kw name="Wait Until Element Is Located In The Page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.title</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.596888" elapsed="0.030189"/>
+</kw>
+<status status="PASS" start="2025-02-28T23:49:27.593771" elapsed="0.033306"/>
+</kw>
+<kw name="Verify Card Titles in the shop page">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-02-28T23:49:27.627077" level="INFO">@{expected-List} = [ Sauce Labs Backpack | Sauce Labbs Bike Light | Sauce Labs Bolt T-Shirt | Sauce Labs Fleece Jacket | Sauce Labs Onesie | Test.allTheThings() T-Shirt (Red) ]</msg>
+<var>@{expected-List}</var>
+<arg>Sauce Labs Backpack</arg>
+<arg>Sauce Labbs Bike Light</arg>
+<arg>Sauce Labs Bolt T-Shirt</arg>
+<arg>Sauce Labs Fleece Jacket</arg>
+<arg>Sauce Labs Onesie</arg>
+<arg>Test.allTheThings() T-Shirt (Red)</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.627077" elapsed="0.000000"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-02-28T23:49:27.648212" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="789a14f1ac1f3b00c2322d1fd732cfe8", element="f.93E3AF4DD6BE92AD82C8FE2EDADD3B15.d.73F4EEE226DA86584502FCF680FEB5F8.e.23")&gt;, &lt;selenium.webdriv...</msg>
+<var>${elements}</var>
+<arg>css:.inventory_item_name</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.627077" elapsed="0.021135"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-02-28T23:49:27.648212" level="INFO">@{actual-List} = [ ]</msg>
+<var>@{actual-List}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.648212" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-28T23:49:27.682048" level="INFO">Sauce Labs Backpack</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.648212" elapsed="0.033836"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual-List}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.682048" elapsed="0.015280"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="789a14f1ac1f3b00c2322d1fd732cfe8", element="f.93E3AF4DD6BE92AD82C8FE2EDADD3B15.d.73F4EEE226DA86584502FCF680FEB5F8.e.23")&gt;</var>
+<status status="PASS" start="2025-02-28T23:49:27.648212" elapsed="0.049116"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-28T23:49:27.707182" level="INFO">Sauce Labs Bike Light</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.697909" elapsed="0.009273"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual-List}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.707182" elapsed="0.009741"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="789a14f1ac1f3b00c2322d1fd732cfe8", element="f.93E3AF4DD6BE92AD82C8FE2EDADD3B15.d.73F4EEE226DA86584502FCF680FEB5F8.e.24")&gt;</var>
+<status status="PASS" start="2025-02-28T23:49:27.697328" elapsed="0.019595"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-28T23:49:27.727090" level="INFO">Sauce Labs Bolt T-Shirt</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.716923" elapsed="0.010167"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual-List}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.727090" elapsed="0.009890"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="789a14f1ac1f3b00c2322d1fd732cfe8", element="f.93E3AF4DD6BE92AD82C8FE2EDADD3B15.d.73F4EEE226DA86584502FCF680FEB5F8.e.25")&gt;</var>
+<status status="PASS" start="2025-02-28T23:49:27.716923" elapsed="0.020057"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-28T23:49:27.756972" level="INFO">Sauce Labs Fleece Jacket</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.736980" elapsed="0.019992"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual-List}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.756972" elapsed="0.010089"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="789a14f1ac1f3b00c2322d1fd732cfe8", element="f.93E3AF4DD6BE92AD82C8FE2EDADD3B15.d.73F4EEE226DA86584502FCF680FEB5F8.e.26")&gt;</var>
+<status status="PASS" start="2025-02-28T23:49:27.736980" elapsed="0.030081"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-28T23:49:27.787038" level="INFO">Sauce Labs Onesie</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.767061" elapsed="0.019977"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual-List}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.787038" elapsed="0.009137"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="789a14f1ac1f3b00c2322d1fd732cfe8", element="f.93E3AF4DD6BE92AD82C8FE2EDADD3B15.d.73F4EEE226DA86584502FCF680FEB5F8.e.27")&gt;</var>
+<status status="PASS" start="2025-02-28T23:49:27.767061" elapsed="0.029114"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-28T23:49:27.806972" level="INFO">Test.allTheThings() T-Shirt (Red)</msg>
+<arg>${element.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.796175" elapsed="0.010797"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual-List}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-02-28T23:49:27.806972" elapsed="0.010209"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="789a14f1ac1f3b00c2322d1fd732cfe8", element="f.93E3AF4DD6BE92AD82C8FE2EDADD3B15.d.73F4EEE226DA86584502FCF680FEB5F8.e.28")&gt;</var>
+<status status="PASS" start="2025-02-28T23:49:27.796175" elapsed="0.021006"/>
+</iter>
+<var>${element}</var>
+<value>@{elements}</value>
+<status status="PASS" start="2025-02-28T23:49:27.648212" elapsed="0.168969"/>
+</for>
+<kw name="Lists Should Be Equal" owner="Collections">
+<msg time="2025-02-28T23:49:27.817181" level="FAIL">Lists are different:
+Index 1: Sauce Labs Bike Light != Sauce Labbs Bike Light</msg>
+<arg>${actual-List}</arg>
+<arg>${expected-List}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="FAIL" start="2025-02-28T23:49:27.817181" elapsed="0.000000">Lists are different:
+Index 1: Sauce Labs Bike Light != Sauce Labbs Bike Light</status>
+</kw>
+<status status="FAIL" start="2025-02-28T23:49:27.627077" elapsed="0.190104">Lists are different:
+Index 1: Sauce Labs Bike Light != Sauce Labbs Bike Light</status>
+</kw>
+<status status="FAIL" start="2025-02-28T23:49:23.621093" elapsed="4.196088">Lists are different:
+Index 1: Sauce Labs Bike Light != Sauce Labbs Bike Light</status>
+</test>
+<status status="FAIL" start="2025-02-28T23:49:23.254792" elapsed="4.562389"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="ShoppingTest">ShoppingTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-28T23:49:23.621093" level="ERROR">Error in file 'C:\Users\user\PycharmProjects\SauceDemoRobotFramework\tests\ShoppingTest.robot' on line 4: Initializing library 'Shopping' with no arguments failed: AttributeError: 'str' object has no attribute '_namespace'
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\SauceDemoRobotFramework\customLibraries\Shopping.py", line 8, in __init__
+    self.seleniumLib= BuiltIn.get_library_instance("SeleniumLibrary")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\robot\libraries\BuiltIn.py", line 3762, in get_library_instance
+    return self._namespace.get_library_instance(name)
+           ^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute '_namespace'</msg>
+</errors>
+</robot>
