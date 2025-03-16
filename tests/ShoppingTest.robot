@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    Collections
-Library    ../customLibraries/Shopping.py
+Library    ../customLibraries/Shop.py
 Test Setup    Open the page of Sauce demo
 *** Variables ***
 ${browser_name}    Chrome
@@ -16,8 +16,7 @@ Validate Cards display in the Shopping Page
     Click Login Button
     Wait Until Element Is Located In The Page
     Verify Card Titles in the shop page
-    Add Items To Card And Checkout    Sauce Labs Fleece Jacket
-
+    Add Items To Card And Checkout    ${listOfProducts}
 
 *** Keywords ***
 
@@ -41,17 +40,16 @@ Verify Card Titles in the shop page
         Append To List    ${actual-List}    ${element.text}
     END
     Lists Should Be Equal    ${actual-List}    ${expected-List}
-    
-Add Items To Card And Checkout
-    [Arguments]    ${productName}
-    ${index}=    Set Variable    1
-    ${elements}=    Get Webelements    css:.inventory_item_name 
-    FOR    ${element}    IN    @{elements}
-        Exit For Loop If    '${productName}' == '${element.text}'
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Button    xpath:(//div[@class='pricebar']/button)[${index}]
 
+#Add Items To Card And Checkout
+    #[Arguments]    ${productName}
+    #${index}=    Set Variable    1
+    #${elements}=    Get Webelements    css:.inventory_item_name
+    #FOR    ${element}    IN    @{elements}
+        #Exit For Loop If    '${productName}' == '${element.text}'
+        #${index}=    Evaluate    ${index} + 1
+    #END
+    #Click Button    xpath:(//div[@class='pricebar']/button)[${index}]
 
 
 Open the page of Sauce demo
