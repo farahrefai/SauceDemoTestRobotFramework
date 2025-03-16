@@ -7,10 +7,6 @@ class Shop():
         self.seleniumLib = BuiltIn().get_library_instance("SeleniumLibrary")
 
     @keyword
-    def hello_world(self):
-        print("hello")
-
-    @keyword
     def add_items_to_card_and_checkout(self, productsList):
         i=1
         productsTitles= self.seleniumLib.get_webelements("css:.inventory_item_name")
