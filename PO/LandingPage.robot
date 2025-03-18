@@ -1,16 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
-*** Variables ***
-
 
 *** Keywords ***
-Fill the login form
-    [Arguments]    ${username}    ${password}
-    Input Text    user-name       ${username}
-    Input Password    password    ${password}
-    
-Click Login Button
-    Click Button    login-button
 
 Verify login is successful by switching to the home page
     Page Should Contain    Products

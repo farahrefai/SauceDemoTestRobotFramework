@@ -30,61 +30,61 @@ Validate Successful Login with Valid Users
     END
 
 Validate Unsuccessful Login with LockedOut username
-    LandingPage.Fill the login form    ${lockedOut-username}    ${valid-password}
-    LandingPage.Click Login Button
+    Fill the login form    ${lockedOut-username}    ${valid-password}
+    Click Login Button
     LandingPage.Wait Until Error Message Is Displayed
     LandingPage.Verify error message locked out user is correct
 
 Validate Unsuccessful Login with Invalid username
-    LandingPage.Fill the login form    ${invalid-username}    ${valid-password}
-    LandingPage.Click Login Button
+    Fill the login form    ${invalid-username}    ${valid-password}
+    Click Login Button
     LandingPage.Wait Until Error Message Is Displayed
     LandingPage.Verify error message is correct
 
 Validate Unsuccessful Login with Invalid password
-    LandingPage.Fill the login form    ${valid-username}    ${invalid-password}
-    LandingPage.Click Login Button
+    Fill the login form    ${valid-username}    ${invalid-password}
+    Click Login Button
     LandingPage.Wait Until Error Message Is Displayed
     LandingPage.Verify error message is correct
 
 Validate Unsuccessful Login with Empty username
-    LandingPage.Fill the login form    ${empty-username}    ${valid-password}
-    LandingPage.Click Login Button
+    Fill the login form    ${empty-username}    ${valid-password}
+    Click Login Button
     LandingPage.Wait Until Error Message Is Displayed
     LandingPage.Verify error message required username is correct
 
 Validate Unsuccessful Login with empty password
-    LandingPage.Fill the login form    ${valid-username}    ${empty-password}
-    LandingPage.Click Login Button
+    Fill the login form    ${valid-username}    ${empty-password}
+    Click Login Button
     LandingPage.Wait Until Error Message Is Displayed
     LandingPage.Verify error message required password is correct
 
 Validate Unsuccessful Login with empty username and password
-    LandingPage.Fill the login form    ${empty-username}    ${empty-password}
-    LandingPage.Click Login Button
+    Fill the login form    ${empty-username}    ${empty-password}
+    Click Login Button
     LandingPage.Wait Until Error Message Is Displayed
     LandingPage.Verify error message required username is correct
 
 Validate Unsuccessful Login with Leading Spaces in username
-    LandingPage.Fill the login form    ${valid-username with leading spaces}    ${valid-password}
-    LandingPage.Click Login Button
+    Fill the login form    ${valid-username with leading spaces}    ${valid-password}
+    Click Login Button
     LandingPage.Wait Until Error Message Is Displayed
     LandingPage.Verify error message is correct
 
 Validate Unsuccessful Login with Trailing Spaces in username
-    LandingPage.Fill the login form    ${valid-username with Trailing spaces}    ${valid-password}
-    LandingPage.Click Login Button
+    Fill the login form    ${valid-username with Trailing spaces}    ${valid-password}
+    Click Login Button
     LandingPage.Wait Until Error Message Is Displayed
     LandingPage.Verify error message is correct
 
 Validate Unsuccessful Login with Leading Spaces in password
-    LandingPage.Fill the login form    ${valid-username}    ${valid-password with Leading spaces}
-    LandingPage.Click Login Button
+    Fill the login form    ${valid-username}    ${valid-password with Leading spaces}
+    Click Login Button
     LandingPage.Wait Until Error Message Is Displayed
     LandingPage.Verify error message is correct
 
 Validate Unsuccessful Login with Trailing Spaces in password
-    LandingPage.Fill the login form    ${valid-username}    ${valid-password with Trailing spaces}
-    LandingPage.Click Login Button
+    Fill the login form    ${valid-username}    ${valid-password with Trailing spaces}
+    Click Login Button
     LandingPage.Wait Until Error Message Is Displayed
     LandingPage.Verify error message is correct
