@@ -13,7 +13,9 @@ Validate Cards display in the Shopping Page
     Click Login Button
     Wait Until Element Is Located In The Page
     Verify Card Titles in the shop page
-    Add Items To Card    ${listOfProducts}
+    Verify Product Prices
+    Add Items To Card And Verify Badge    ${listOfProducts}
+
 
         
 

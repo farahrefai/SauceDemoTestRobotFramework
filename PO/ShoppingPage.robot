@@ -15,15 +15,18 @@ Verify Card Titles in the shop page
     END
     Lists Should Be Equal    ${actual-List}    ${expected-List}
 
-#Add Items To Card And Checkout
-    #[Arguments]    ${productName}
-    #${index}=    Set Variable    1
-    #${elements}=    Get Webelements    css:.inventory_item_name
-    #FOR    ${element}    IN    @{elements}
-        #Exit For Loop If    '${productName}' == '${element.text}'
-        #${index}=    Evaluate    ${index} + 1
-    #END
-    #Click Button    xpath:(//div[@class='pricebar']/button)[${index}]
+Verify Badge
+
+
+Verify Product Prices
+    @{expected_prices}=    Create List    $29.99    $9.99    $15.99    $49.99    $7.99    $15.99
+    ${prices}=    Get Webelements    css:.inventory_item_price
+    ${num_prices}    Get Length    ${prices}
+     FOR    ${index}    IN RANGE    ${num_prices}
+        ${price_text}    Get Text    ${prices}[${index}]
+        ${expected_price}    Set Variable    ${expected_prices}[${index}]
+        Should Be Equal    ${price_text}    ${expected_price}    The displayed price is incorrect: ${price_text} instead of ${expected_price}.
+    END
 
 Click Shopping cart container
     Click Element    shopping_cart_container
