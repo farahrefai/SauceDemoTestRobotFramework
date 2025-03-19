@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 Library    ../customLibraries/Shop.py
 Test Setup    Open the page of Sauce demo
-Suite Teardown    Close Browser
+Test Teardown    Close Browser
 Resource    ../PO/Generic.robot
 Resource    ../PO/ShoppingPage.robot
 Resource    ../PO/CheckoutPage.robot
