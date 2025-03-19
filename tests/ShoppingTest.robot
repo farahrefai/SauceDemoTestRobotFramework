@@ -4,6 +4,7 @@ Library    ../customLibraries/Shop.py
 Resource    ../PO/Generic.robot
 Resource    ../PO/ShoppingPage.robot
 Test Setup    Open the page of Sauce demo
+Suite Teardown    Close Browser
 *** Variables ***
 @{listOfProducts}       Sauce Labs Bolt T-Shirt    Sauce Labs Fleece Jacket
 

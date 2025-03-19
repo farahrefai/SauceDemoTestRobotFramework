@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 Library    ../customLibraries/Shop.py
 Test Setup    Open the page of Sauce demo
+Suite Teardown    Close Browser
 Resource    ../PO/Generic.robot
 Resource    ../PO/ShoppingPage.robot
 Resource    ../PO/CheckoutPage.robot
@@ -9,7 +10,6 @@ Resource    ../PO/CheckoutPage.robot
 *** Variables ***
 @{listOfProducts}       Sauce Labs Bolt T-Shirt    Sauce Labs Fleece Jacket
 *** Test Cases ***
-
 End to end ecommerce product validation
     [Tags]    REGRESSION
     Fill The Login Form    ${valid-username}    ${valid-password}

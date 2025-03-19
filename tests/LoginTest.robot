@@ -4,6 +4,7 @@ Library    SeleniumLibrary
 Resource    ../PO/Generic.robot
 Resource    ../PO/LandingPage.robot
 Test Setup    Open the page of Sauce demo
+Suite Teardown    Close Browser
 
 
 *** Variables ***
