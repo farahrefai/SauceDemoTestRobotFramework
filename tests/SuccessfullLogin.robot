@@ -7,7 +7,6 @@ Test Teardown    Close Browser
 Library    DataDriver    file=resources/validUserNamesData.csv
 Test Template    Validate Successful Login
 *** Variables ***
-@{valid-usernames}    standard_user    visual_user    error_user    performance_glitch_user    problem_user
 ${valid_password}
 *** Test Cases ***
 Login with validUserName ${valid_username} and validPassword ${valid_password}
