@@ -17,6 +17,9 @@ ${error_message_login}    css:.error-message-container
 Open the page of Sauce demo
     Create Webdriver    ${browser_name}
     Go To    ${url}
+
+Click Login Button
+    Click Button    login-button
     
 Fill the login form
     [Arguments]    ${username}    ${password}

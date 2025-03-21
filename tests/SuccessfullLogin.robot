@@ -15,7 +15,7 @@ Login with validUserName ${valid_username} and validPassword ${valid_password}
 *** Keywords ***
 Validate Successful Login
     Fill the login form    ${valid-username}    ${valid-password}
-    Click Button    login-button
+    Click Login Button
     Verify login is successful by switching to the home page
     Logout
 

@@ -16,7 +16,7 @@ Login with user ${username} and password ${password}
 Validate Unsuccessful Login
     [Arguments]    ${username}    ${password}
     Fill the login form    ${username}    ${password}
-    Click Button    login-button
+    Click Login Button
     Wait Until Element Is Visible     ${error_message_login}
     
 
