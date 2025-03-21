@@ -11,6 +11,7 @@ ${url}    https://www.saucedemo.com
 ${valid-password}      secret_sauce
 @{valid-usernames}    standard_user    visual_user    error_user    performance_glitch_user    problem_user
 ${valid-username}    standard_user
+${error_message_login}    css:.error-message-container
 
 *** Keywords ***
 Open the page of Sauce demo
@@ -21,9 +22,6 @@ Fill the login form
     [Arguments]    ${username}    ${password}
     Input Text    user-name       ${username}
     Input Password    password    ${password}
-    
-Click Login Button
-    Click Button    login-button    
 
 Logout
     Click Button    id=react-burger-menu-btn
