@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    To validate the login form
 Library    SeleniumLibrary
-Library    DataDriver    file=resources/InvalidUserNamesData.csv    encoding=utf_8    dialect=unix
+Library    DataDriver    file=../resources/InvalidUserNamesData.csv    encoding=utf_8    dialect=unix
 Resource    ../PO/Generic.robot
 Resource    ../PO/LandingPage.robot
 Test Setup    Open the page of Sauce demo

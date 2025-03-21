@@ -4,7 +4,7 @@ Resource    ../PO/Generic.robot
 Resource    ../PO/LandingPage.robot
 Test Setup    Open the page of Sauce demo
 Test Teardown    Close Browser
-Library    DataDriver    file=resources/validUserNamesData.csv
+Library    DataDriver    file=../resources/validUserNamesData.csv
 Test Template    Validate Successful Login
 *** Variables ***
 ${valid_password}
