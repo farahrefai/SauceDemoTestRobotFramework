@@ -9,7 +9,6 @@ Test Teardown    Close Browser
 Test Template    Validate Unsuccessful Login
 
 *** Test Cases ***
-
 Login with user ${username} and password ${password}
 
 *** Keywords ***
